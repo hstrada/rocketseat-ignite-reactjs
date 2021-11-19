@@ -1,4 +1,10 @@
-const repositoryName = 'unform2'
+import { RepositoryItem } from './RepositoryItem'
+
+const repository = {
+  name: 'unform',
+  description: 'forms in react',
+  link: 'https://github.com',
+}
 
 export function RepositoryList() {
   return (
@@ -6,16 +12,10 @@ export function RepositoryList() {
       <h1>Lista de repositórios</h1>
 
       <ul>
-        <li>
-          <strong>{repositoryName}</strong>
-          <p>forms in react</p>
-          <a href="">Acessar Repositórios</a>
-        </li>
-        <li>
-          <strong>unform</strong>
-          <p>forms in react</p>
-          <a href="">Acessar Repositórios</a>
-        </li>
+        <RepositoryItem repository={repository} />
+        <RepositoryItem repository={repository} />
+        <RepositoryItem repository={repository} />
+        <RepositoryItem repository={repository} />
       </ul>
     </section>
   )
