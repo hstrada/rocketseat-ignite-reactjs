@@ -1,6 +1,7 @@
-import './styles/global.css';
+import { RepositoryList } from './components/RepositoryList'
+import './styles/global.scss'
 
 export function App() {
   // throw new Error('eita');
-  return <h1>Hello ReactJS</h1>;
+  return <RepositoryList />
 }
