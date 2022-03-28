@@ -1,3 +1,4 @@
 import { SignIn } from './SignIn';
+import { Subscribe } from './Subscribe';
 
-export default { SignIn };
+export default { SignIn, Subscribe };

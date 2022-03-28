@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Button from '../components/Button';
 
 import styles from './styles/home.module.scss';
 
@@ -20,6 +21,8 @@ export default function Home() {
             Get access to all the publications <br />
             <span>for $9.90 month</span>
           </p>
+
+          <Button.Subscribe />
         </section>
 
         <img src="/images/avatar.svg" alt="Girl coding" />
