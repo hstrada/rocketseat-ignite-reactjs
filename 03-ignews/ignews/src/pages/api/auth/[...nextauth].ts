@@ -19,7 +19,7 @@ export default NextAuth({
   ],
   callbacks: {
     async signIn({ user }) {
-      const email = "hstrada407@gmail.com"
+      const email = "helena.strada@gmail.com"
       try {
         await fauna.query(
           q.If(

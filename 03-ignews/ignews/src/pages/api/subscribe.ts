@@ -4,11 +4,13 @@ import { stripe } from '../../services/stripe';
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
   if (req.method === 'POST') {
-    const session = await getSession({ req });
+    // const session = await getSession({ req });
     // const email = session.user.email
     const stripeCustomer = await stripe.customers.create({
-      email: 'hstrada407@gmail.com',
+      email: 'helena.strada@gmail.com',
     });
+
+    console.log(stripeCustomer)
 
     const stripeCheckoutSession = await stripe.checkout.sessions.create({
       customer: stripeCustomer.id,
