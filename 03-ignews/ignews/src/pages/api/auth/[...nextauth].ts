@@ -1,9 +1,9 @@
-import { query as q } from 'faunadb';
+import { query as q } from 'faunadb'
 
-import NextAuth from 'next-auth';
-import GithubProvider from 'next-auth/providers/github';
+import NextAuth from 'next-auth'
+import GithubProvider from 'next-auth/providers/github'
 
-import { fauna } from '../../../services/fauna';
+import { fauna } from '../../../services/fauna'
 
 export default NextAuth({
   providers: [
@@ -19,7 +19,7 @@ export default NextAuth({
   ],
   callbacks: {
     async signIn({ user }) {
-      const email = "helena.strada@gmail.com"
+      const email = 'helena.strada@gmail.com'
       try {
         await fauna.query(
           q.If(
@@ -27,11 +27,11 @@ export default NextAuth({
             q.Create(q.Collection('users'), { data: { email } }),
             q.Get(q.Match(q.Index('user_by_email'), email))
           )
-        );
-        return true;
+        )
+        return true
       } catch (error) {
-        return false;
+        return false
       }
     },
   },
-});
+})
