@@ -1156,6 +1156,16 @@
     escape-html "^1.0.3"
     imgix-url-builder "^0.0.3"
 
+"@prismicio/helpers@^2.3.0":
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/@prismicio/helpers/-/helpers-2.3.0.tgz#316cdfdf668efd379a8c2ccfc169e320da30a346"
+  integrity sha512-/3YJ3F7bN56Pn9y2B4a3t0y4QD0zVPqaHf0Rzd5jCA7Bf0wi3oQ35KHGmP3DrYzz16aQNOZgQy/IO/80QsOYTg==
+  dependencies:
+    "@prismicio/richtext" "^2.0.1"
+    "@prismicio/types" "^0.1.27"
+    escape-html "^1.0.3"
+    imgix-url-builder "^0.0.3"
+
 "@prismicio/next@^0.1.2":
   version "0.1.2"
   resolved "https://registry.yarnpkg.com/@prismicio/next/-/next-0.1.2.tgz#f63567b97bf7bd5ddfa1bdfee8bf1ab81e9aa2b2"
