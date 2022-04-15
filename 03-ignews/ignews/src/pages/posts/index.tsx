@@ -1,32 +1,16 @@
 import Head from 'next/head'
+import * as prismicH from '@prismicio/helpers'
 import { createClient } from '../../services/prismic'
 import styles from './styles.module.scss'
-import * as prismicH from '@prismicio/helpers'
-
-const getExcerpt = (slices) => {
-  const text = slices
-    .filter((slice) => slice.slice_type === 'publications')
-    .map((slice) => prismicH.asText(slice.primary.title))
-    .join(' ')
-
-  const excerpt = text.substring(0, 300)
-
-  if (text.length > 300) {
-    return excerpt.substring(0, excerpt.lastIndexOf(' ')) + '…'
-  } else {
-    return excerpt
-  }
-}
+import { PrismicLink } from '@prismicio/react'
+import Link from 'next/link'
 
 const getDescription = (slices) => {
-  const text = slices
-    .filter((slice) => slice.slice_type === 'publications')
-    .map((slice) => prismicH.asText(slice.primary.description))
-    .join(' ')
+  const { text } = slices.find((slice) => slice.type === 'paragraph')
 
-  const excerpt = text.substring(0, 300)
+  const excerpt = text.substring(0, 100)
 
-  if (text.length > 300) {
+  if (text.length > 100) {
     return excerpt.substring(0, excerpt.lastIndexOf(' ')) + '…'
   } else {
     return excerpt
@@ -37,17 +21,20 @@ const Post = ({ post }) => {
   return (
     <>
       {post && (
-        <a key={post.key}>
-          <time>{post.updatedAt}</time>
-          <strong>{post.title}</strong>
-          <p>{post.description}</p>
-        </a>
+        <Link href={`/posts/${post.slug}`}>
+          <a key={post.key}>
+            <time>{post.updatedAt}</time>
+            <strong>{post.title}</strong>
+            <p>{post.description}</p>
+          </a>
+        </Link>
       )}
     </>
   )
 }
 
 interface Post {
+  id: string
   slug: string
   key: string
   updatedAt: string
@@ -80,19 +67,23 @@ export default function Posts({ posts }: PostsProps) {
 export async function getStaticProps({ previewData }) {
   const client = createClient({ previewData })
 
-  const articles = await client.getAllByType('Posts')
+  const articles = await client.getAllByType('Publication')
 
   const posts = articles.map((post) => {
     return {
-      slug: post.id,
-      key: post.id,
-      updatedAt: new Date(post.last_publication_date).toLocaleDateString('pt-BR', {
-        day: '2-digit',
-        month: 'long',
-        year: 'numeric',
-      }),
-      title: getExcerpt(post.data.slices),
-      description: getDescription(post.data.slices),
+      id: post.id,
+      slug: post.uid,
+      key: post.uid,
+      updatedAt: new Date(post.last_publication_date).toLocaleDateString(
+        'pt-BR',
+        {
+          day: '2-digit',
+          month: 'long',
+          year: 'numeric',
+        }
+      ),
+      title: post.data.title,
+      description: getDescription(post.data.description),
     }
   })
 

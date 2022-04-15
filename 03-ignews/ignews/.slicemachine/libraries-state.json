@@ -51,14 +51,84 @@
               "title": [
                 {
                   "type": "heading1",
-                  "text": "Reinvent intuitive e-commerce",
+                  "text": "Deploy cross-platform applications",
                   "spans": []
                 }
               ],
               "description": [
                 {
                   "type": "paragraph",
-                  "text": "Reprehenderit minim reprehenderit et. Esse aliqua anim voluptate adipisicing eu nisi anim magna mollit ea voluptate adipisicing.",
+                  "text": "Laborum voluptate adipisicing culpa laboris consectetur nulla. Occaecat veniam amet aliquip sint cillum fugiat ad aute laboris culpa pariatur duis duis ut et.",
+                  "spans": []
+                }
+              ]
+            }
+          }
+        },
+        "meta": {
+          "fileName": "index",
+          "extension": "js"
+        },
+        "screenshotPaths": {}
+      },
+      "publications_posts": {
+        "library": "slices",
+        "id": "publications_posts",
+        "name": "PublicationsPosts",
+        "description": "PublicationsPosts",
+        "model": {
+          "id": "publications_posts",
+          "type": "SharedSlice",
+          "name": "PublicationsPosts",
+          "description": "PublicationsPosts",
+          "variations": [
+            {
+              "id": "default",
+              "name": "Default",
+              "docURL": "...",
+              "version": "sktwi1xtmkfgx8626",
+              "description": "PublicationsPosts",
+              "primary": {
+                "title": {
+                  "type": "StructuredText",
+                  "config": {
+                    "single": "heading1",
+                    "label": "Title",
+                    "placeholder": "This is where it all begins..."
+                  }
+                },
+                "description": {
+                  "type": "StructuredText",
+                  "config": {
+                    "single": "paragraph",
+                    "label": "Description",
+                    "placeholder": "A nice description of your feature"
+                  }
+                }
+              },
+              "items": {},
+              "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+            }
+          ]
+        },
+        "mocks": {
+          "default": {
+            "variation": "default",
+            "name": "Default",
+            "slice_type": "publications_posts",
+            "items": [],
+            "primary": {
+              "title": [
+                {
+                  "type": "heading1",
+                  "text": "Optimize B2B methodologies",
+                  "spans": []
+                }
+              ],
+              "description": [
+                {
+                  "type": "paragraph",
+                  "text": "Ex voluptate et reprehenderit reprehenderit ullamco mollit id in velit pariatur ex ex consectetur officia dolore.",
                   "spans": []
                 }
               ]
