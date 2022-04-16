@@ -30,6 +30,16 @@ export const getServerSideProps: GetServerSideProps = async ({
   req,
 }) => {
   const session = await getSession({ req })
+
+  if (!session.activeSubscription) {
+    return {
+      redirect: {
+        destination: '/',
+        permanent: false,
+      },
+    }
+  }
+  
   const { slug } = params
 
   const client = createClient({ previewData })
@@ -47,8 +57,6 @@ export const getServerSideProps: GetServerSideProps = async ({
     title: post.data.title,
     description: post.data.description,
   }
-
-  console.log(formattedPost)
 
   return {
     props: {
