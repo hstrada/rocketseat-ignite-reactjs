@@ -12,18 +12,19 @@ import {
   Th,
   Thead,
   Tr,
-  useBreakpointValue,
-} from '@chakra-ui/react'
-import { RiAddLine, RiPencilLine } from 'react-icons/ri'
-import { Header } from '../../components/Header'
-import { Pagination } from '../../components/Pagination'
-import { SideBar } from '../../components/Sidebar'
+  useBreakpointValue
+} from '@chakra-ui/react';
+import Link from 'next/link';
+import { RiAddLine, RiPencilLine } from 'react-icons/ri';
+import { Header } from '../../components/Header';
+import { Pagination } from '../../components/Pagination';
+import { SideBar } from '../../components/Sidebar';
 
 export default function UserList() {
   const isWideVersion = useBreakpointValue({
     base: false,
-    lg: true,
-  })
+    lg: true
+  });
 
   return (
     <Box>
@@ -38,15 +39,17 @@ export default function UserList() {
               Usuários
             </Heading>
 
-            <Button
-              as="a"
-              size="sm"
-              fontSize="small"
-              colorScheme="pink"
-              leftIcon={<Icon as={RiAddLine} fontSize="20" />}
-            >
-              Criar usuário
-            </Button>
+            <Link href="/users/create" passHref>
+              <Button
+                as="a"
+                size="sm"
+                fontSize="small"
+                colorScheme="pink"
+                leftIcon={<Icon as={RiAddLine} fontSize="20" />}
+              >
+                Criar usuário
+              </Button>
+            </Link>
           </Flex>
 
           <Table colorScheme="whiteAlpha">
@@ -92,5 +95,5 @@ export default function UserList() {
         </Box>
       </Flex>
     </Box>
-  )
+  );
 }
