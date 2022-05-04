@@ -1,40 +1,40 @@
-import dynamic from 'next/dynamic'
-const Chart = dynamic(() => import('react-apexcharts'), { ssr: false })
-import { ApexOptions } from 'apexcharts'
+import dynamic from 'next/dynamic';
+const Chart = dynamic(() => import('react-apexcharts'), { ssr: false });
+import { ApexOptions } from 'apexcharts';
 
-import { Box, Flex, SimpleGrid, Text, theme } from '@chakra-ui/react'
-import { Header } from '../components/Header'
-import { SideBar } from '../components/Sidebar'
+import { Box, Flex, SimpleGrid, Text, theme } from '@chakra-ui/react';
+import { Header } from '../components/Header';
+import { SideBar } from '../components/Sidebar';
 
 const options: ApexOptions = {
   chart: {
     toolbar: {
-      show: false,
+      show: false
     },
     zoom: {
-      enabled: false,
+      enabled: false
     },
-    foreColor: theme.colors.gray[500],
+    foreColor: theme.colors.gray[500]
   },
   grid: {
-    show: false,
+    show: false
   },
   dataLabels: {
-    enabled: false,
+    enabled: false
   },
   stroke: {
-    curve: 'smooth',
+    curve: 'smooth'
   },
   tooltip: {
-    enabled: false,
+    enabled: false
   },
   xaxis: {
     type: 'datetime',
     axisBorder: {
-      color: theme.colors.gray[600],
+      color: theme.colors.gray[600]
     },
     axisTicks: {
-      color: theme.colors.gray[600],
+      color: theme.colors.gray[600]
     },
     categories: [
       '2021-03-18T09:00:00.000Z',
@@ -43,8 +43,8 @@ const options: ApexOptions = {
       '2021-03-21T09:00:00.000Z',
       '2021-03-22T09:00:00.000Z',
       '2021-03-23T09:00:00.000Z',
-      '2021-03-24T09:00:00.000Z',
-    ],
+      '2021-03-24T09:00:00.000Z'
+    ]
   },
   fill: {
     opacity: 0.3,
@@ -52,12 +52,12 @@ const options: ApexOptions = {
     gradient: {
       shade: 'dark',
       opacityFrom: 0.7,
-      opacityTo: 0.3,
-    },
-  },
-}
+      opacityTo: 0.3
+    }
+  }
+};
 
-const series = [{ name: 'series 1', data: [31, 120, 10, 28, 51, 18, 64] }]
+const series = [{ name: 'series 1', data: [31, 120, 10, 28, 51, 18, 64] }];
 
 export default function Dashboard() {
   return (
@@ -102,5 +102,5 @@ export default function Dashboard() {
         </SimpleGrid>
       </Flex>
     </Flex>
-  )
+  );
 }
