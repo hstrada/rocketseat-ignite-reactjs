@@ -3,8 +3,10 @@ import { api } from '../api';
 
 type User = { id: string; name: string; email: string; createdAt: string };
 
-async function getUsers(): Promise<User[]> {
-  const { data } = await api.get('/users');
+export async function getUsers() {
+  const { data } = await api.get('users');
+
+  console.log(data)
 
   const users = data.users.map((user) => {
     return {
