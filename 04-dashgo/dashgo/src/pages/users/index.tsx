@@ -16,6 +16,7 @@ import {
   Spinner
 } from '@chakra-ui/react';
 import Link from 'next/link';
+import { useState } from 'react';
 import { RiAddLine, RiPencilLine } from 'react-icons/ri';
 import { Header } from '../../components/Header';
 import { Pagination } from '../../components/Pagination';
@@ -27,6 +28,8 @@ export default function UserList() {
     base: false,
     lg: true
   });
+
+  const [page, setPage] = useState(1);
 
   const { data, isLoading, error, isFetching } = useUsers();
 
@@ -77,8 +80,8 @@ export default function UserList() {
       </Table>
       <Pagination
         totalCountOfRegisters={200}
-        currentPage={5}
-        onPageChange={() => {}}
+        currentPage={page}
+        onPageChange={setPage}
       />
     </>
   );
