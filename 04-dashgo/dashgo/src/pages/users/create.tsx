@@ -101,7 +101,11 @@ export default function UserCreate() {
                   Cancelar
                 </Button>
               </Link>
-              <Button type="submit" colorScheme="pink">
+              <Button
+                isLoading={formState.isSubmitting}
+                type="submit"
+                colorScheme="pink"
+              >
                 Salvar
               </Button>
             </HStack>
