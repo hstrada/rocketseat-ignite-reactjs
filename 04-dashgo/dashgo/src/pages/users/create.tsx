@@ -62,11 +62,17 @@ export default function UserCreate() {
 
           <VStack spacing="8">
             <SimpleGrid minChildWidth="240px" spacing="8" w="100%">
-              <Input name="name" label="Nome completo" {...register('name')} />
+              <Input
+                name="name"
+                error={errors.name}
+                label="Nome completo"
+                {...register('name')}
+              />
               <Input
                 name="email"
                 type="email"
                 label="E-mail"
+                error={errors.email}
                 {...register('email')}
               />
             </SimpleGrid>
@@ -75,12 +81,14 @@ export default function UserCreate() {
                 name="password"
                 type="password"
                 label="Senha"
+                error={errors.password}
                 {...register('password')}
               />
               <Input
                 name="password_confirmation"
                 type="password"
                 label="Confirmar senha"
+                error={errors.password_confirmation}
                 {...register('password_confirmation')}
               />
             </SimpleGrid>
@@ -93,7 +101,9 @@ export default function UserCreate() {
                   Cancelar
                 </Button>
               </Link>
-              <Button colorScheme="pink">Salvar</Button>
+              <Button type="submit" colorScheme="pink">
+                Salvar
+              </Button>
             </HStack>
           </Flex>
         </Box>
