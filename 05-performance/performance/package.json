@@ -7,10 +7,14 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "server": "json-server -d 750 -w -p 3333 ./server.js"
+    "server": "json-server -d 750 -w -p 3333 ./server.js",
+    "analyze": "ANALYZE=true next build"
   },
   "dependencies": {
+    "@next/bundle-analyzer": "^12.1.6",
+    "@types/lodash": "^4.14.182",
     "@types/react-virtualized": "^9.21.21",
+    "lodash": "^4.17.21",
     "next": "12.1.6",
     "react": "18.1.0",
     "react-dom": "18.1.0",
