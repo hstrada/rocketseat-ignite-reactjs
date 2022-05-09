@@ -33,7 +33,7 @@ const Post = ({ post }) => {
   )
 }
 
-interface Post {
+export interface Post {
   id: string
   slug: string
   key: string
