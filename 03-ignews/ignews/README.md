@@ -1,3 +1,15 @@
+# Preview
+
+![ignews image preview](https://github.com/hstrada/ignite-reactjs/blob/main/.github/03-ignews.png?raw=true)
+
+## next
+
+Install
+> yarn
+
+Run
+> yarn dev
+
 ## Stripe
 
 > stripe listen --forward-to localhost:3000/api/webhooks
