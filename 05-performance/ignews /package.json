@@ -42,6 +42,7 @@
     "jest-dom": "^4.0.0",
     "jest-environment-jsdom": "^28.1.0",
     "slice-machine-ui": "^0.3.6",
+    "ts-jest": "^27.0.3",
     "typescript": "^4.6.2"
   }
 }
