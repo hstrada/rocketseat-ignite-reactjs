@@ -1,0 +1,22 @@
+{
+  "_cts": {
+    "Posts": {},
+    "Publications": {},
+    "Publication": {
+      "description": {
+        "config": {
+          "patternType": "PARAGRAPH",
+          "blocks": 1
+        }
+      }
+    }
+  },
+  "slices": {
+    "Publications": {
+      "default": {
+        "primary": {}
+      }
+    },
+    "PublicationsPosts": {}
+  }
+}
