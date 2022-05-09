@@ -21,3 +21,7 @@ ctrl+c -> ctrl+v
 > yarn run slicemachine
 
 Running on http://localhost:9999
+
+## Tests
+
+> yarn jest --coverage
