@@ -1,6 +1,6 @@
 # Preview
 
-![ignews image preview](https://github.com/hstrada/ignite-reactjs/blob/main/.github/03-ignews.png?raw=true)
+![ignews image preview](https://github.com/hstrada/ignite-reactjs/blob/master/.github/03-ignews.png?raw=true)
 
 ## next
 

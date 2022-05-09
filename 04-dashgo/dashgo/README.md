@@ -1,6 +1,6 @@
 # Preview
 
-![dashgo image preview](https://github.com/hstrada/ignite-reactjs/blob/main/.github/04-dashgo.png?raw=true)
+![dashgo image preview](https://github.com/hstrada/ignite-reactjs/blob/master/.github/04-dashgo.png?raw=true)
 
 ## Getting Started
 
